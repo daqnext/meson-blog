@@ -11,7 +11,7 @@ const siteMetadata = {
   rss: 'https://blog.meson.network/feed.xml',
   siteLogo: '/static/images/logo.png',
   image: '/static/images/avatar.png',
-  socialBanner: '/static/images/twitter-card.png',
+  socialBanner: '/static/images/meson-card.png',
   email: 'admin@meson.network',
   github: 'https://github.com/daqnext',
   twitter: 'https://twitter.com/NetworkMeson',
