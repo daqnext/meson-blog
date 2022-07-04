@@ -3,7 +3,7 @@ const siteMetadata = {
   author: 'Meson Network',
   headerTitle: 'Meson Network',
   description:
-    'Reuben is a Data Scientist by training and Full-Stack Developer by passion. In his early teens, while pursuing his obsession with technology, he discovered a passion for building tech that makes a difference – Today, Reuben works as an independent Consultant, get in touch. ✌︎',
+    'We believe the design principle behind blockchain is to make the rights to everyone and not be governed by the giants.',
   language: 'en-us',
   theme: 'system', // system, dark or light
   siteUrl: 'https://blog.meson.network',
