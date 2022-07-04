@@ -1,0 +1,40 @@
+---
+title: How Meson helps the IPFS?
+date: '2021-02-03'
+tags: ['Meson', 'IPFS']
+draft: false
+summary: How Meson helps the IPFS?'
+images: ['https://raw.githubusercontent.com/bitruss/img/main/2021/202205271423256.png']
+layout: PostLayout
+readTime: '1 minute read'
+---
+
+![](https://raw.githubusercontent.com/bitruss/img/main/2021/202205271423256.png)
+
+IPFS is a peer-to-peer hypermedia protocol that is designed to make the web faster, safer, and more open. In IPFS, files have a unique fingerprint called a cryptographic hash, which provides deduplication, high performance, and clustered persistence. It empowers people to store the world’s information for future generations.
+
+However, in our daily life, there are some problems restrict the applications of IPFS.
+
+![](https://raw.githubusercontent.com/bitruss/img/main/2021/202205271424429.png)
+
+First, P2P, itself is a problem. We appreciate the designs in IPFS, and the peer-to-peer content delivery really saves the cost of bandwidth. However, it needs the Clients to keep the P2P connection, and many people want to reach the files in a browser rather than P2P clients. Therefore, the network needs some gateways that might help users to retrieve files from p2p clients and show them in web browsers. And we have found some websites such as https://ipfs.io/ipfs, https://ipfs.infura.io/, https://ipfs.mttk.net/ to solve such problem.
+
+The second problem is the _value measurement_ of files. As a storage layer, IPFS does not need to care about the value of files. Therefore, we can see many files stored in IPFS with few retrievals, which might cause some problems. To activate the value of storage, we need to store files that is user-orientated. Because of the designs of IPFS, it does not suit the high-frequency retrieval.
+
+Meson’s mission is to solve the problems mentioned above. From the storage perspective, it helps users to upload files to IPFS in a web browser. From the perspective of retrieval, users can view the files in a web browser faster. In this way, most people do not need to communicate with the P2P client, which cuts down the threshold of using the IPFS network.
+
+We added a cache layer (AKA. second layer) on IPFS, which stores the high-frequency retrieval files to Meson. It might be helpful to optimize the speed for content delivery and to save the cost/pressure in the basic storage layer (IPFS).
+
+Please do not be hesitant to try Meson on the website: [https://meson.network/](https://meson.network/).
+
+![](https://raw.githubusercontent.com/bitruss/img/main/2021/202205271426055.png)
+
+**Social Media**
+
+- Official Website: https://meson.network
+- Github: https://github.com/daqnext
+- Twitter: https://twitter.com/NetworkMeson
+- Medium: https://medium.com/meson-network
+- Linktr: https://linktr.ee/mesonnetwork
+- Discord: https://discord.com/invite/z6YfSHDkmS
+- Telegram: https://t.me/mesonnetwork
