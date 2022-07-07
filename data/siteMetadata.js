@@ -3,7 +3,7 @@ const siteMetadata = {
   author: 'Meson Network',
   headerTitle: 'Meson Network',
   description:
-    'We believe the design principle behind blockchain is to make the rights to everyone and not be governed by the giants.',
+    'Meson Network is trying to create the world’s largest bandwidth marketplace in the future.',
   language: 'en-us',
   theme: 'system', // system, dark or light
   siteUrl: 'https://blog.meson.network',
