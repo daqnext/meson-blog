@@ -6,24 +6,15 @@ import siteMetadata from '@/data/siteMetadata'
 import formatDate from '@/lib/utils/formatDate'
 import Comments from '@/components/comments'
 import ScrollTopAndComment from '@/components/ScrollTopAndComment'
-import { ReactNode } from 'react'
-import { PostFrontMatter } from 'types/PostFrontMatter'
 
-interface Props {
-  frontMatter: PostFrontMatter
-  children: ReactNode
-  next?: { slug: string; title: string }
-  prev?: { slug: string; title: string }
-}
-
-export default function PostLayout({ frontMatter, next, prev, children }: Props) {
-  const { slug, date, title, summary } = frontMatter
+export default function PostLayout({ frontMatter, authorDetails, next, prev, children }) {
+  const { date, title } = frontMatter
 
   return (
     <SectionContainer>
-      <BlogSEO url={`${siteMetadata.siteUrl}/announcements/${slug}`} {...frontMatter} />
+      <BlogSEO url={`${siteMetadata.siteUrl}/blog/${frontMatter.slug}`} {...frontMatter} />
       <ScrollTopAndComment />
-      <article className="py-12">
+      <article>
         <div>
           <header>
             <div className="space-y-1 border-b border-gray-200 pb-10 text-center dark:border-gray-700">
@@ -38,27 +29,23 @@ export default function PostLayout({ frontMatter, next, prev, children }: Props)
               <div>
                 <PageTitle>{title}</PageTitle>
               </div>
-              <div className="text-lg text-gray-400 sm:text-xl">{summary}</div>
             </div>
           </header>
-
           <div
             className="divide-y divide-gray-200 pb-8 dark:divide-gray-700 xl:divide-y-0 "
             style={{ gridTemplateRows: 'auto 1fr' }}
           >
             <div className="divide-y divide-gray-200 dark:divide-gray-700 xl:col-span-3 xl:row-span-2 xl:pb-0">
-              <div className="prose prose-lg max-w-none pt-10 pb-8 dark:prose-dark sm:prose-xl">
-                {children}
-              </div>
+              <div className="prose max-w-none pt-10 pb-8 dark:prose-dark">{children}</div>
             </div>
-            {/* <Comments frontMatter={frontMatter} /> */}
+            <Comments frontMatter={frontMatter} />
             <footer>
               <div className="flex flex-col text-sm font-medium sm:flex-row sm:justify-between sm:text-base">
                 {prev && (
                   <div className="pt-4 xl:pt-8">
                     <Link
-                      href={`/announcements/${prev.slug}`}
-                      className="text-blue-500 hover:text-blue-600 dark:hover:text-blue-400"
+                      href={`/blog/${prev.slug}`}
+                      className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
                     >
                       &larr; {prev.title}
                     </Link>
@@ -67,8 +54,8 @@ export default function PostLayout({ frontMatter, next, prev, children }: Props)
                 {next && (
                   <div className="pt-4 xl:pt-8">
                     <Link
-                      href={`/announcements/${next.slug}`}
-                      className="text-blue-500 hover:text-blue-600 dark:hover:text-blue-400"
+                      href={`/blog/${next.slug}`}
+                      className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
                     >
                       {next.title} &rarr;
                     </Link>
