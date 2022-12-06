@@ -34,6 +34,10 @@ class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700;800;900&display=swap"
             rel="stylesheet"
           />
+          <link href="/assets/titilliumweb-bold-webfont.woff2" rel="stylesheet" />
+          <link href="/assets/titilliumweb-light-webfont.woff2" rel="stylesheet" />
+          <link href="/assets/titilliumweb-regular-webfont.woff2" rel="stylesheet" />
+          <link href="/assets/titilliumweb-semibold-webfont.woff2" rel="stylesheet" />
         </Head>
         <body className="bg-white text-black antialiased dark:bg-background-color dark:text-white">
           <Main />
