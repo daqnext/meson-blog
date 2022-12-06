@@ -46,7 +46,7 @@ export default function Home({ posts }: InferGetStaticPropsType<typeof getStatic
               </span>
               Network
             </h1>
-            <p className="text-black dark:text-white sm:pr-6 sm:text-lg sm:leading-8">
+            <p className="font-titl text-black dark:text-white sm:pr-6 sm:text-xl sm:leading-8">
               We believe the design principle behind blockchain is to make the rights to everyone
               and not be governed by the giants. That’s why we practice the protocol model to build
               the marketplace and take it to the Raspberry Pi, Xbox, Playstation, and IoT as well.{' '}

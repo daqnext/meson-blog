@@ -27,11 +27,10 @@
   font-style: normal;
 } /*!sc*/
 
-.prose-lg {
-  font-size: unset;
-}
-
 .prose {
   font: 100%/1.45 'titillium_web', sans-serif;
-  font-size: unset;
+}
+
+.font-titl {
+  font-family: 'titillium_web', sans-serif;
 }
