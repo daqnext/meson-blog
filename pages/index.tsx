@@ -1,10 +1,12 @@
 import Link from '@/components/Link'
 import { PageSEO } from '@/components/SEO'
+import Tag from '@/components/Tag'
 import siteMetadata from '@/data/siteMetadata'
 import { getAllFilesFrontMatter } from '@/lib/mdx'
 import { GetStaticProps, InferGetStaticPropsType } from 'next'
 import { PostFrontMatter } from 'types/PostFrontMatter'
 import NewsletterForm from '@/components/NewsletterForm'
+import formatDate from '@/lib/utils/formatDate'
 
 const MAX_DISPLAY = 3
 
@@ -31,7 +33,7 @@ export default function Home({ posts }: InferGetStaticPropsType<typeof getStatic
               <span className="relative inline-block -rotate-6 text-blue-500">
                 <Link
                   href="https://twitter.com/NetworkMeson"
-                  className="font-arrow2 text-sm font-bold text-blue-500 transition hover:underline hover:underline-offset-8 sm:text-xl"
+                  className="font-sans text-sm font-bold text-blue-500 transition hover:underline hover:underline-offset-8 sm:text-xl"
                 >
                   @meson network
                 </Link>
@@ -39,7 +41,7 @@ export default function Home({ posts }: InferGetStaticPropsType<typeof getStatic
             </span>
             <h1 className="pt-2 text-4xl font-bold leading-9 tracking-tight text-background-color dark:text-gray-100 sm:text-5xl sm:leading-10 md:text-6xl md:leading-snug">
               Meson
-              <span className="relative inset-y-8 ml-2 inline-block -rotate-12 font-arrow text-blue-500 sm:inset-y-14">
+              <span className="relative inset-y-8 ml-2 inline-block -rotate-12 font-sans text-blue-500 sm:inset-y-14">
                 ^
               </span>
               Network
@@ -84,75 +86,59 @@ export default function Home({ posts }: InferGetStaticPropsType<typeof getStatic
         <h1 className="my-4 mt-16 pb-2 text-3xl font-bold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl">
           Recent Posts{' '}
         </h1>
-        <ul className="flex flex-col gap-10 dark:border-gray-700 md:flex-row">
-          {!posts.length && 'No posts found.'}
-          {posts.slice(0, MAX_DISPLAY).map((frontMatter, index) => {
-            const { slug, date, title, summary, tags, readTime } = frontMatter
-            return (
-              <Link
-                href={`/blog/${slug}`}
-                key={slug}
-                className="group relative w-full transform transition-all duration-500 hover:scale-[1.05] hover:duration-500 md:w-1/3"
-              >
-                <div
-                  className={
-                    `absolute -inset-0 rounded-xl bg-gradient-to-r blur-sm transition duration-1000 group-hover:-inset-1 group-hover:blur-md group-hover:duration-500` +
-                    gradients[index]
-                  }
-                ></div>
-                <article className="relative h-full rounded-xl bg-background-color">
-                  <div className="flex h-full flex-col justify-between rounded-xl bg-white p-5 dark:bg-background-color">
-                    <div className="flex flex-col justify-between space-y-5 md:flex-row xl:col-span-3">
-                      <div className="space-y-6">
-                        <div>
-                          <h2 className="text-xl font-semibold leading-8 tracking-tight text-gray-900 dark:text-gray-100">
-                            {title}
-                          </h2>
+        <div className="col-span-2 divide-y divide-gray-200 dark:divide-gray-700">
+          <ul className="divide-y divide-gray-200 dark:divide-gray-700">
+            {!posts.length && 'No posts found.'}
+            {posts.slice(0, MAX_DISPLAY).map((frontMatter) => {
+              const { slug, date, title, summary, tags } = frontMatter
+              return (
+                <li key={slug} className="py-12">
+                  <article>
+                    <div className="space-y-2 xl:grid xl:grid-cols-4 xl:items-baseline xl:space-y-0">
+                      <dl>
+                        <dt className="sr-only">Published on</dt>
+                        <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
+                          <time dateTime={date}>{formatDate(date)}</time>
+                        </dd>
+                      </dl>
+                      <div className="space-y-5 xl:col-span-3">
+                        <div className="space-y-6">
+                          <div>
+                            <h2 className="text-2xl font-bold leading-8 tracking-tight">
+                              <Link
+                                href={`/blog/${slug}`}
+                                className="text-gray-900 dark:text-gray-100"
+                              >
+                                {title}
+                              </Link>
+                            </h2>
+                            <div className="flex flex-wrap">
+                              {tags.map((tag) => (
+                                <Tag key={tag} text={tag} />
+                              ))}
+                            </div>
+                          </div>
+                          <div className="prose max-w-none text-gray-500 dark:text-gray-400">
+                            {summary}
+                          </div>
+                        </div>
+                        <div className="text-base font-medium leading-6">
+                          <Link
+                            href={`/blog/${slug}`}
+                            className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
+                            aria-label={`Read "${title}"`}
+                          >
+                            Read more &rarr;
+                          </Link>
                         </div>
                       </div>
                     </div>
-                    <div className="mt-10 flex">
-                      <div className="capsize flex items-center text-gray-800 dark:text-gray-200">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          className="mr-2 h-6 w-6"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="2"
-                            d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-                          ></path>
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="2"
-                            d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
-                          ></path>
-                        </svg>
-                        {readTime}
-                      </div>
-                    </div>
-                  </div>
-                </article>
-              </Link>
-            )
-          })}
-        </ul>
-        {posts.length > MAX_DISPLAY && (
-          <div className="mt-6 flex justify-end text-base font-medium leading-6">
-            <Link
-              href="/blog"
-              className="text-background-color hover:text-blue-600 dark:text-white dark:hover:text-blue-400"
-              aria-label="all posts"
-            >
-              All Posts &rarr;
-            </Link>
-          </div>
-        )}
+                  </article>
+                </li>
+              )
+            })}
+          </ul>
+        </div>
       </div>
     </>
   )

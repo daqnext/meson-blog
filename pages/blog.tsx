@@ -2,18 +2,10 @@ import { getAllFilesFrontMatter } from '@/lib/mdx'
 import siteMetadata from '@/data/siteMetadata'
 import ListLayout from '@/layouts/ListLayout'
 import { PageSEO } from '@/components/SEO'
-import { GetStaticProps, InferGetStaticPropsType } from 'next'
-import { ComponentProps } from 'react'
-import SnippetsLayout from '@/layouts/SnippetsLayout'
-import BlogListLayout from '@/layouts/BlogListLayout'
 
-export const POSTS_PER_PAGE = 10
+export const POSTS_PER_PAGE = 5
 
-export const getStaticProps: GetStaticProps<{
-  posts: ComponentProps<typeof ListLayout>['posts']
-  initialDisplayPosts: ComponentProps<typeof ListLayout>['initialDisplayPosts']
-  pagination: ComponentProps<typeof ListLayout>['pagination']
-}> = async () => {
+export async function getStaticProps() {
   const posts = await getAllFilesFrontMatter('blog')
   const initialDisplayPosts = posts.slice(0, POSTS_PER_PAGE)
   const pagination = {
@@ -24,15 +16,11 @@ export const getStaticProps: GetStaticProps<{
   return { props: { initialDisplayPosts, posts, pagination } }
 }
 
-export default function Blog({
-  posts,
-  initialDisplayPosts,
-  pagination,
-}: InferGetStaticPropsType<typeof getStaticProps>) {
+export default function Blog({ posts, initialDisplayPosts, pagination }) {
   return (
     <>
       <PageSEO title={`Blog - ${siteMetadata.author}`} description={siteMetadata.description} />
-      <BlogListLayout
+      <ListLayout
         posts={posts}
         initialDisplayPosts={initialDisplayPosts}
         pagination={pagination}
