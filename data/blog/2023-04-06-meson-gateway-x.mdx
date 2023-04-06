@@ -1,0 +1,46 @@
+---
+title: 'Meson Gateway X: Paving the Way for Mass Adoption of Web3 Infrastructure'
+date: '2022-12-07'
+tags: ['Meson Labs', 'Gateway X', 'Web3']
+draft: false
+summary: Gateway X integrates internet cloud services, providing users with exclusive facilities for uploading and sharing Web3 storage.
+images: ['/static/images/meson-gateway-x/traffic-congestion.png']
+layout: PostLayout
+readTime: '8 minutes read'
+---
+
+From [Meson Labs](https://meson.network/)
+
+## TL;DR
+
+Gateway X integrates internet cloud services, providing users with exclusive facilities for uploading and sharing Web3 storage. Additionally, Gateway X supports users connecting their local storage devices to the network, making nearly unlimited low-cost storage usage a possibility.
+
+## Why we build gateway X
+
+Meson, as a bandwidth market service, provides Gateway acceleration services (aka CDN) for Web3 storage facilities. However, in our practice, we often find issues with the origin of the services. Let's take the two major mainstream Web3 storage systems as examples. For IPFS, the gateway is ipfs.io. When users configure ipfs.io as the source on the Meson side, Meson is abstracted as a cache layer, which to some extent alleviates the direct request pressure on the source gateway. However, the fundamental issue lies in the imbalance of supply and demand for a single gateway.
+
+This situation is like the traffic problem on a highway. There is only one route to deliver goods to IPFS city (ipfs.io). No matter how much the road is widened, congestion will always occur when the demand for goods increases. Meson, on the other hand, is like building numerous satellite cities around the world. Users don't have to take the ipfs.io highway; they can directly go to Meson's satellite cities to collect goods. The satellite city plan can fundamentally solve the problem, but there are some risks in the early stages. As most users still go to the IPFS main city to collect goods, and Meson's satellite cities also need to take the ipfs.io highway to collect goods from the main city, Meson's trucks eventually get stuck in traffic along with everyone else, leading to occasional shortages in satellite cities. In reality, when using the ipfs.io gateway, issues like 502 errors occur more than once, indicating that the service is not highly available.
+
+![EX-M1](/static/images/meson-gateway-x/traffic-congestion.png)
+
+Another prominent storage project, Arweave, employs a different approach with its public gateway, arweave.net. This gateway primarily functions as a redirect, directing user requests to a specific Arweave node and allowing it to respond with files. This design has the advantage of reducing the pressure on the gateway itself, but service reliability can be compromised when there aren't enough nodes or the file response process isn't properly incentivized.
+
+In comparison, IPFS's main city is self-controlled and boasts extraordinary processing capabilities. However, there's only one external transportation highway, forcing users to enter and exit the city via that route, which often experiences congestion. Arweave's main city is designed as a distribution hub, where users enter through arweave.net and are allocated to different exit highways, heading to new node cities. Once goods are loaded at the node cities, users can leave directly via their respective highways without having to return to the main city or its highway. The advantage is that the main city and its highway design can support ultra-high capacity access, but the challenge lies in the number and reliability of node cities.
+
+Alright, now that we understand the architecture and challenges, let's see how Meson tackles them.
+
+Fortunately, today's excellent cloud infrastructure makes it relatively easier to lay a virtual line on the internet compared to building a physical highway. One of the core advantages of cloud services is their standardized nature and provision of standard access methods. At Meson, we've integrated existing cloud services and offer mirror deployment services for storage facilities. Users can effortlessly deploy their own IPFS gateway and Arweave node, using their facilities for storage uploading and sharing while storing only their files, significantly reducing costs.
+
+This is akin to the past, where constructing a main city had a high entry barrier, achievable only by a select few professionals. With Gateway X at Meson, we provide a one-click main city construction feature, dramatically lowering the barrier and enabling even ordinary individuals without an engineering background to choose a piece of land and deploy a main city. There are several apparent benefits to deploying main cities in this manner:
+
+1. Users can now complete deliveries and transportation (uploading and downloading files) through their own deployed main cities, avoiding the past issue of everyone crowding onto a single highway.
+
+2. With more options available in the network for other users in need of transportation, the official main city's traffic pressure is significantly alleviated.
+
+3. More main cities are built on the land, and according to P2P protocols, numerous highways are established between them, resulting in a stronger and more robust road network.
+
+4. Users can deploy multiple main cities and set them up on the Meson side. By establishing direct high-speed connections (P2P direct connections) between their main cities, users can significantly enhance their internal data exchange capabilities.
+
+## What's Next
+
+Throughout 2023, we plan to gradually deliver Gateway X, which aims to address source availability issues, along with the underlying infrastructure, Meson Cloud. Within Meson Cloud, we will support a diverse range of clouds, availability zones, different types of images (such as ENS's eth.radio, currently under integration), and various IP pools and monitoring facilities. Built around this infrastructure, we can see that the applications developed possess the characteristics of being platform-independent and easily scalable, taking a significant step towards achieving distributed and decentralized solutions.
