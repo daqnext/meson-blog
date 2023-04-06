@@ -8,7 +8,7 @@ import { PostFrontMatter } from 'types/PostFrontMatter'
 import NewsletterForm from '@/components/NewsletterForm'
 import formatDate from '@/lib/utils/formatDate'
 
-const MAX_DISPLAY = 3
+const MAX_DISPLAY = 10
 
 export const getStaticProps: GetStaticProps<{ posts: PostFrontMatter[] }> = async () => {
   const posts = await getAllFilesFrontMatter('blog')
@@ -69,10 +69,10 @@ export default function Home({ posts }: InferGetStaticPropsType<typeof getStatic
             </p>
             <p className="leading-7 text-gray-500 underline underline-offset-4 sm:pr-6 sm:text-lg">
               <Link
-                href="https://meson.network/about.html"
+                href="https://docs.meson.network/"
                 className="hover:cursor-pointer hover:text-blue-500 dark:text-gray-500 hover:dark:text-blue-500"
               >
-                <a>Read the rest of my bio &rarr;</a>
+                <a>Read the rest of my docs &rarr;</a>
               </Link>
             </p>
           </div>
