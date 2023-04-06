@@ -44,7 +44,7 @@ export default function Home({ posts }: InferGetStaticPropsType<typeof getStatic
               <span className="relative inset-y-8 ml-2 inline-block -rotate-12 font-sans text-blue-500 sm:inset-y-14">
                 ^
               </span>
-              Network
+              Labs
             </h1>
             <p className="font-titl text-black dark:text-white sm:pr-6 sm:text-xl sm:leading-8">
               We believe the design principle behind blockchain is to make the rights to everyone
@@ -72,7 +72,7 @@ export default function Home({ posts }: InferGetStaticPropsType<typeof getStatic
                 href="https://docs.meson.network/"
                 className="hover:cursor-pointer hover:text-blue-500 dark:text-gray-500 hover:dark:text-blue-500"
               >
-                <a>Read the rest of my docs &rarr;</a>
+                <a>Read the rest of the docs &rarr;</a>
               </Link>
             </p>
           </div>
