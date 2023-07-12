@@ -1,0 +1,57 @@
+---
+title: 'Meson Vector Plan'
+date: '2023-07-12'
+tags: ['Bandwidth Exchange', 'Vector Meson']
+draft: false
+summary: Establish a Nasdaq-like platform for bandwidth infrastructure - the Meson Exchange. The Vector Plan aligns with Meson Network's objective of transitioning from a closed, manual contract-driven market to one governed by the protocol through its contributors and participants.
+images: ['/static/images/meson-gateway-x/traffic-congestion.png']
+layout: PostLayout
+authors: ['sherlock', 'jonathan']
+---
+
+Many of you may know Meson Network for offering a decentralized content delivery network (CDN) service for Web3 users for the last couple of years. However, this is only a part of Meson's Vector Plan, which is to establish a Nasdaq-like platform for bandwidth infrastructure - the **Meson Exchange**. The Vector Plan aligns with Meson Network's objective of transitioning from a closed, manual contract-driven market to one governed by the protocol through its contributors and participants.
+
+In order to make that happen, it is essential to understand the current characteristics of the bandwidth market. Bandwidth has emerged as a `massive global market`, playing a crucial role in connecting people's everyday data. Additionally, this market exhibits a `multi-edge` structure, with infrastructures divided across geographies, companies, and countries. A significant challenge within this market is the presence of `profit conflicts` among its participants. These conflicts often prove to be inefficient to resolve through human intervention alone. Therefore, transitioning from a closed, manual contract-driven market to an automatic protocol-governed exchange market holds the potential for enhancing efficiency in this global multi-edge market, where players strive to maximize their profits.
+
+We are building the Meson Exchange to address these challenges in the rapidly evolving bandwidth market. To explore further, it is crucial to examine the feasibility and importance of standardizing bandwidth products while ensuring its performance.
+
+### Standardized bandwidth is the future!
+
+Bandwidth rental from local telecoms is typically measured in megabits per second (Mbps), making Mbps one of the common units to quantify bandwidth. Additionally, Amazon Web Services (AWS) has emerged as the world's largest cloud service provider, offering standardized physical bandwidth infrastructures that are accessible to users. These infrastructures have been broken down into standardized components and are made accessible to buyers.
+
+The success of AWS proves the importance of infrastructure product standardization in creating an efficient and transparent market. This is particularly true for the global bandwidth market. Presently, bandwidth offerings differ significantly in terms of speed, reliability, and pricing structures, which makes it difficult for buyers and sellers to assess and compare various options. By implementing standardized metrics and benchmarks to measure bandwidth performance, such as latency, throughput, and quality of service, the market can function with improved clarity and efficiency. This standardization would empower buyers to make more informed decisions and foster fair competition among sellers, ultimately benefiting all participants in the market.
+
+### Proof of Bandwidth
+
+Another significant challenge in the context of bandwidth is how to accurately measure and prove its value. Unlike other infrastructure resources, obtaining precise bandwidth measurements would require an inefficient 24-7 monitoring. One potential solution is to utilize data receipt proofs that function similarly to TCP's ACK (Acknowledgement), but this approach is susceptible to cheating and manipulation.
+
+Our proposed solution adopts a free market approach and incorporates two mechanisms to ensure network security.
+
+The first mechanism involves nodes (suppliers) staking Meson tokens to join the network. If a node is found to cheat and is detected, a portion of their stake will be deducted, ensuring that the penalty is significant enough to discourage node misbehavior.
+
+The second mechanism involves the introduction of a role called the Hunter. The Hunter acts as a regular file requester and can request files from any node in the network. If a node attempts to deceive by claiming to possess something it doesn't have, the Hunter has the opportunity to test and expose the deceptive behavior. The Hunter then reports the fraudulent node to the network's running nodes, and a portion of the slashed tokens from the cheating node is awarded to the Hunter for their vigilance. The role of the Hunter is akin to that of an arbitrator in financial exchanges, helping to enhance market efficiency and integrity.
+
+### Performance is a hard challenge, but not that hard
+
+Now let's discuss the scheduling aspect of the Meson Exchange, drawing a comparison to the system used by Uber. In Uber, for instance, there may be passenger A who wants to travel from location C to D, and passenger B who wants to travel from location E to F. Meanwhile, there are two available cars, X and Y. The challenge is to find a matching system that effectively serves the demands of the passengers while achieving a globally optimized arrangement.
+
+Similarly, in the context of bandwidth exchange, we encounter a similar challenge. Let's consider a file A that needs to be transferred from location C to D. The question becomes how to identify the most suitable routers and nodes to ensure the global optimum in terms of performance and efficiency.
+
+The solution to this challenge primarily depends on the scale of the problem. In the case of Uber, the average query per second (QPS) at the server level is typically below 1,000, with peak QPS below 10,000. Moreover, Uber usually focuses on addressing problems within a single city, involving cars and local citizens. However, in the case of Meson, the scenario involves much higher frequency matching and a significantly larger number of nodes. As the platform experiences mass adoption, there could be hundreds of millions or even more nodes participating in the exchange with high-frequency matching demands. One approach to solve this seemingly daunting problem is to encourage individual nodes to join node pools and reduce the overall number of single nodes in the network. For example, if there are 3,000 nodes in city A, they can direct their resources to five pool nodes. This way, in the Meson system, scheduling only needs to be performed for these five nodes instead of the original 3,000 single nodes. Furthermore, nodes can choose the pool with the best performance and reward profile, fostering healthy competition among pools and driving them to continuously improve their performance.
+
+Taking a step further, we need to examine whether decentralized scheduling can be realized. The answer is simple: we do not impose restrictions on the nodes, allowing them to deploy their own deployment and scheduling strategies. However, in order to maximize their profits, it is likely that nodes in the network will converge to similar strategies.
+
+### The demand for bandwidth is experiencing significant growth
+
+We are currently witnessing a progression from texts to images, and now to videos, as we embrace advancements in technology. With the continuous efforts made by tech conglomerates and protocols alike, it is possible that we may soon enter the era of the metaverse. As these revolutionary technologies emerge, the demand for bandwidth is increasing exponentially.
+
+In the Meson Exchange, resources can be exchanged not only through the spot market but also through the future market, allowing people to trade and bet on future resources as they would for the much more mature commodities market. This means that individuals can have access to a suite of spot and derivatives products for advanced bandwidth resource planning, providing flexibility and opportunities for optimizing resource allocation in anticipation of future demands.
+
+As we move towards a more interconnected and immersive digital landscape, the Meson Exchange serves as a platform to meet the growing bandwidth requirements and facilitates both immediate and future standardized resource trading, supporting the rapidly evolving needs of the technology-driven era we are witnessing.
+
+### So, in short, the Meson vector plan is:
+
+1. _**Use Meson token to aggregate long-tail, mid-sized and edge suppliers**_
+1. _**Use the suppliers to serve growing Web2 + Web3 bandwidth demands**_
+1. _**Attract larger suppliers and demands to join the network through the Meson Exchange**_
+1. _**Expand the Meson model to other infrastructure products that have the same challenges**_
