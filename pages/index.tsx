@@ -50,21 +50,6 @@ export default function Home({ posts }: InferGetStaticPropsType<typeof getStatic
               We believe the design principle behind blockchain is to make the rights to everyone
               and not be governed by the giants. That’s why we practice the protocol model to build
               the marketplace and take it to the Raspberry Pi, Xbox, Playstation, and IoT as well.{' '}
-              {/* In my
-              free time, I like developing{' '}
-              <Link
-                href="/projects"
-                className="text-black underline decoration-primary-500 underline-offset-4 hover:cursor-pointer hover:text-blue-500 dark:text-white hover:dark:text-blue-500"
-              >
-                <a>side projects</a>
-              </Link>{' '}
-              and{' '}
-              <Link href="/blog">
-                <a className="text-black underline decoration-primary-500 underline-offset-4 hover:cursor-pointer hover:text-blue-500 dark:text-white hover:dark:text-blue-500">
-                  blogging
-                </a>
-              </Link>{' '}
-              about my journey as an Entrepreneur. */}
               Have fun! <span className="waving-hand text-2xl">👋🏻</span>
             </p>
           </div>
