@@ -67,14 +67,6 @@ export default function Home({ posts }: InferGetStaticPropsType<typeof getStatic
               about my journey as an Entrepreneur. */}
               Have fun! <span className="waving-hand text-2xl">👋🏻</span>
             </p>
-            <p className="leading-7 text-gray-500 underline underline-offset-4 sm:pr-6 sm:text-lg">
-              <Link
-                href="https://docs.meson.network/"
-                className="hover:cursor-pointer hover:text-blue-500 dark:text-gray-500 hover:dark:text-blue-500"
-              >
-                <a>Read the rest of the docs &rarr;</a>
-              </Link>
-            </p>
           </div>
           {siteMetadata.newsletter.provider !== '' && (
             <div className="col-span-2 flex xl:items-center xl:justify-center xl:pl-6">
