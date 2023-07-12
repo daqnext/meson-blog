@@ -67,7 +67,7 @@ export default function Home({ posts }: InferGetStaticPropsType<typeof getStatic
           <ul className="divide-y divide-gray-200 dark:divide-gray-700">
             {!posts.length && 'No posts found.'}
             {posts.slice(0, MAX_DISPLAY).map((frontMatter) => {
-              const { slug, date, title, summary, tags } = frontMatter
+              const { slug, date, title, summary, tags, departments } = frontMatter
               return (
                 <li key={slug} className="py-12">
                   <article>
@@ -89,10 +89,8 @@ export default function Home({ posts }: InferGetStaticPropsType<typeof getStatic
                                 {title}
                               </Link>
                             </h2>
-                            <div className="flex flex-wrap">
-                              {tags.map((tag) => (
-                                <Tag key={tag} text={tag} />
-                              ))}
+                            <div className="prose max-w-none font-medium text-gray-800 dark:text-gray-400">
+                              {departments}
                             </div>
                           </div>
                           <div className="prose max-w-none text-gray-500 dark:text-gray-400">

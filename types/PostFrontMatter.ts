@@ -12,4 +12,5 @@ export type PostFrontMatter = {
   slug: string
   fileName: string
   readTime?: string
+  departments: string
 }
