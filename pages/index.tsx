@@ -44,7 +44,7 @@ export default function Home({ posts }: InferGetStaticPropsType<typeof getStatic
               <span className="relative inset-y-8 ml-2 inline-block -rotate-12 font-sans text-blue-500 sm:inset-y-14">
                 ^
               </span>
-              Labs
+              Blog
             </h1>
             <p className="font-titl text-black dark:text-white sm:pr-6 sm:text-xl sm:leading-8">
               We believe the design principle behind blockchain is to make the rights to everyone
