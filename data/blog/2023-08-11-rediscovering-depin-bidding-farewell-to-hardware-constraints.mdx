@@ -1,0 +1,58 @@
+---
+title: 'Rediscovering DePIN, bidding farewell to hardware constraints'
+date: '2023-08-11'
+tags: ['DePIN', 'TIPIN']
+draft: false
+summary: This discourse encompasses concerns of hardware dependencies, historical milestones, and Meson Network's emphasis on infrastructure, bridging digital-physical gaps, culminating in a plea to tackle electronic waste, encapsulating DePIN's transformative potential.
+images:
+  [
+    '/static/images/rediscovering-depin-bidding-farewell-to-hardware-constraints/a617a99098c3e613.webp',
+  ]
+layout: PostLayout
+authors: ['zion']
+departments: 'Zion'
+---
+
+The current direction of DePIN appears to be trapped in a hardware-centric loop, contradicting the open and inclusive ethos of Web3. This software-hardware bundling model raises concerns about regression within the cryptocurrency world. If innovation requires hardware dependency, it could dim the potential brightness of the envisioned new era, as Web3's essence is choice and freedom. Striking a balance between security and open accessibility is pivotal, as an exclusive hardware approach risks stifling the decentralized principles that define Web3's promise.
+
+Let's take a retrospective look at the history of the cypherpunks movement. In 1965, Ken Thompson and Dennis Ritchie from Bell Labs developed the Unix system on an ancient PDP-7 computer. By 1971, Unix had been ported to the slightly more advanced PDP-11 computer with a mere 512 KB of disk space. Furthermore, Dennis Ritchie, building upon the original B language, created the C language, enhancing Unix's portability as an operating system. By the mid-’80s, Unix became so successful that it was running on thousands of hardware, from micro-computers to mainframes with a variety of hardware.
+
+| ![Ken Thompson and Dennis Ritchie at PDP-11](/static/images/rediscovering-depin-bidding-farewell-to-hardware-constraints/Ken-Thompson-sitting-and-Dennis-Ritchie-at-PDP-11.webp) |
+| :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+|                                             _[Ken Thompson and Dennis Ritchie at PDP-11](https://www.debugpoint.com/unix-history/)_                                              |
+
+In 2003, a significant transformation unfolded with Linksys' release of the open-source embedded Linux OS, OpenWRT, marking the onset of the "Flashing to Firmware" era for wireless routers. OpenWRT's impact stretched into the realm of IoT, enabling devices to shed their original operating systems and embrace openness by flashing to OpenWRT firmware. Notably, in the domain of blockchain mining hardware, such as BITMAIN's Antminer and Helium Miners, these devices reaped the benefits of OpenWRT's flexibility.
+
+| ![Bitmain Antminer S1 OpenWRT wiki](/static/images/rediscovering-depin-bidding-farewell-to-hardware-constraints/antminer-s1.png) |
+| :------------------------------------------------------------------------------------------------------------------------------: |
+|                             _[Bitmain Antminer S1 OpenWRT wiki](https://openwrt.org/toh/bitmain/s1)_                             |
+
+Moving forward to 2008, Bitcoin continued to uphold the cypherpunk ethos. While perusing the bitcointalk forum, it's evident that Bitcoin mining evolved from CPU to GPU and FPGA, culminating in the widely recognized ASIC miners. During this nearly four-year span, the development of Bitcoin mining devices was entirely community-driven. Consider for a moment the alternative scenario: if Satoshi Nakamoto had announced that only officially authorized mining devices could participate in Bitcoin shortly after its release, the absurdity of such a notion becomes clear. This period highlights the organic, decentralized nature of the cryptocurrency community's innovation, contrasting with a centralized approach that could have stifled its growth.
+
+As of 2023, it's remarkable to observe on YouTube that many Bitcoin miners are still utilizing the decade-old Bitmain Antminer U1 for Bitcoin mining. This underscores that while major players chase higher computational power, the presence of small-scale miners remains vital, able to participate in the Bitcoin network at low costs. This fact is undeniably exciting, highlighting the inclusive nature of Bitcoin's ecosystem, where both large and small miners coexist, contributing to the network's resilience and decentralization.
+
+| ![AntMiner USB Stick](/static/images/rediscovering-depin-bidding-farewell-to-hardware-constraints/aEMh4esWBU.png) |
+| :---------------------------------------------------------------------------------------------------------------: |
+|              _[AntMiner USB Stick](https://www.youtube.com/results?search_query=AntMiner+USB+Stick)_              |
+
+While assisting Meson Network miners, I've also encountered moments that filled me with excitement. One instance that left a lasting impression was when I communicated with a miner from the United States. During our conversation, I learned that they were using a Raspberry Pi 2 paired with a USB 2.0 flash drive, along with port forwarding, to run a Meson node. This unconventional setup proved to be perfectly viable. This experience underscored the adaptability of the Meson Network and, later on, influenced the design of the GaGaNode project. The fact that arm devices were included in the development plan showcases the significance of a thriving community in the success of a Depin project.
+
+Certainly, here's a summary of the points to consider regarding DePIN:
+
+**Firstly, the reliability of foundational infrastructure is paramount.** A distributed network demands higher maintenance capabilities from nodes than centralized systems. Users familiar with Meson dCDN understand its unique distribution mechanism, which is highly randomized compared to the fixed clusters of centralized dCDNs. However, Meson dCDN's advantages shine even more prominently during high-concurrency cross-regional requests. Further insights can be gained by reviewing [documentation](https://docs.Meson.network/case-studies/arweave.html) to understand how Meson dCDN assisted Arweave in overcoming official gateway bottlenecks.
+
+**Second, the decoupling of software and hardware is a critical consideration.** Bundling software with hardware is a trait typically found in applications steered by centralized enterprises (such as the Mac system). For DePIN to succeed, it must ensure significant decoupling between software and hardware, allowing software to define everything much like Bitcoin.This decoupling facilitates DePIN's decentralized distributed deployment vision. Both Meson and GaGaNode advocate utilizing idle resources for network participation. The decentralized nature of Meson nodes is evident from its [explorer](https://explorer.Meson.network:1984/). This setup means you might be served by a miner in Nigeria, harnessing their idle equipment.
+
+| ![Meson Explorer](/static/images/rediscovering-depin-bidding-farewell-to-hardware-constraints/Meson-nodes.png) |
+| :------------------------------------------------------------------------------------------------------------: |
+|                            _[Meson Explorer](https://explorer.Meson.network:1984/)_                            |
+
+**Third, establishing robust Real-World Asset (RWA) mapping channels is crucial.** Bridging the gap between the digital and physical worlds is a focus. Meson's effort lies in standardizing bandwidth, gauging performance through benchmarking metrics (such as latency, throughput, and service quality). This enhances the operation of Meson Exchange with greater clarity and efficiency. This standardization empowers buyers to make informed decisions and encourages fair competition among sellers, ultimately benefiting all market participants. Further insights can be obtained from the [Meson Vector Plan](https://blog.Meson.network/blog/2023-07-12-Meson-Vector-Plan-V1).
+
+We can learn from [The Round Up](https://theroundup.org/global-e-waste-statistics/) report that by 2023, there will be over **347 Mt** of unrecovered electronic waste on Earth. Does this mean that these **347 Mt** of discarded electronic devices can be reclaimed and reused?
+
+| ![Latest Global E-Waste Statistics And What They Tell Us](/static/images/rediscovering-depin-bidding-farewell-to-hardware-constraints/e-waste.png) |
+| :------------------------------------------------------------------------------------------------------------------------------------------------: |
+|                   _[Latest Global E-Waste Statistics And What They Tell Us](https://theroundup.org/global-e-waste-statistics/)_                    |
+
+Meson Network has been closely attentive to carbon emissions research. Therefore, the journey from Meson to GaGaNode has seen the barrier of entry for users transformed from a minor threshold to now being completely barrier-free. This transformation aims to assist those with idle electronic devices in giving them a new lease on life. The aspiration is to encourage more DePIN participants to address the increasing environmental damage caused by the mounting electronic waste. Leveraging the power of DePIN to bring about positive change in the world.
