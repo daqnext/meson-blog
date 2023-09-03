@@ -1,0 +1,82 @@
+---
+title: 'Meson Network Bridge First and Last Miles for Web3'
+date: '2023-01-14'
+tags: ['Meson', 'Ecosystem']
+draft: false
+summary: Meson Network provides developers with the option of a decentralized IPFS/Filecoin gateway.
+images: ['/static/images/old-blog/212465641-5f59e46a-b8de-4fc6-a727-f450ecadafdd.png']
+layout: PostLayout
+authors: ['default']
+departments: 'Meson Network'
+---
+
+![](/static/images/old-blog/212465641-5f59e46a-b8de-4fc6-a727-f450ecadafdd.png)
+
+> Meson Network provides developers with the option of a decentralized IPFS/Filecoin gateway.
+
+Meson Network is committed to creating an efficient bandwidth marketplace on Web3, using a blockchain protocol model to replace the traditional labor-based sales models, consolidating and monetizing idle bandwidth from long-tail users at a low cost. Meson Network is the foundation of data transmission for decentralized storage, computation, and the emerging Web3 Dapp ecosystem.
+
+Filecoin/IPFS is a popular decentralized storage solution. At present, people store huge file data on Filecoin (Total Data Stored [494 PIB](https://storage.filecoin.io/) 2023.1.11), coupled with the massive data uploaded by IPFS, we can imagine that IPFS gateways (such as [ipfs.io](http://ipfs.io/), etc.) as the middle mile The transmission medium bears high concurrent traffic requests.
+
+If the IPFS/Filecoin file is transferred from the node (First Mile) to the user test (Last-Mile), the transmission pressure may trigger the Gateway node to reach the **_CPU, I/O, Memory, and Bandwidth Bound_** in the physical environment, causing users not to be able to read the corresponding IPFS/Filecoin files.
+
+![image](https://user-images.githubusercontent.com/46369948/212464961-3724c11c-6178-49a4-9e05-26b52fafa8a4.png)
+
+504 Gateway Time-out (Openresty)
+
+30k Meson's nodes distributed globally cover nearly 1,000 edge nodes, and the network capacity nearly reaches 15.3 Tib/s, providing a sufficient middle mile (middle mile) bandwidth resource for Bridge First and Last Miles. decentralized mesh-net style gateway.It can well alleviate the performance bottleneck encountered by IPFS/Filecoin files during transmission.
+
+![image](https://user-images.githubusercontent.com/46369948/212465000-fa37eeb0-f98b-4008-b2c7-b035a0211586.png)
+
+[https://explorer.meson.network:1984/](https://explorer.meson.network:1984/)
+
+### Meson Gateway-Quick Start
+
+meson.network Gateway provides IPFS path style resolutions `https://pz-{pull_zone}.meson.network/ipfs/{cid}` as follows:
+
+```jsx
+> curl https://nftstorage.link/ipfs/bafkreidyeivj7adnnac6ljvzj2e3rd5xdw3revw4da7mx2ckrstapoupoq
+Hello nft.storage! 😎
+
+> curl https://pz-ipfs.meson.network/ipfs/bafkreidyeivj7adnnac6ljvzj2e3rd5xdw3revw4da7mx2ckrstapoupoq
+Hello nft.storage! 😎
+```
+
+In practice, when meson. network Gateway receives an IPFS path style request, it will 302 redirects to another **\*\***domain resolution maintaining compliance with the [same-origin policy](https://en.wikipedia.org/wiki/Same-origin_policy). The canonical form of access `https://spec00-{node_hash}-{pz_character}-{pull_zone}.mesontracking.com/ipfs/{cid}` causes the browser to interpret each returned file as being from a different origin.
+
+```jsx
+> curl https://spec00-edkccikbiakbajx-04-ipfs.mesontracking.com/ipfs/bafkreidyeivj7adnnac6ljvzj2e3rd5xdw3revw4da7mx2ckrstapoupoq_m_access_key_odbgmzmlvf
+Hello nft.storage! 😎
+```
+
+Note:
+
+1. meson. network Gateway is composed of decentralized Meson nodes, so the link returned by each request to the gateway may be different, you can visit [mesondemo](https://mesondemo.github.io/) for more information.
+2. meson. network Cache is limited to 1 GB size objects.
+3. You can communicate directly with core developers in the `#🧐dev-suggestions` channel of the [Meson Discord](https://discord.com/invite/z6YfSHDkmS), and apply for your own product-specific name of `pull_zone` and corresponding bandwidth.
+
+### \***\*High-level architecture\*\***
+
+Meson Network is committed to creating an efficient bandwidth marketplace on Web3. Because Meson's bandwidth sources are not limited by region and form, he can come from data centers, home bandwidth, 5G networks, or even satellite Internet. Therefore, Meson CDN will be more accurate, energy-efficient, and completely decentralized under a certain number of nodes than traditional CDNs in terms of service accuracy.
+
+Thanks to IPFS's immutable nature, a CDN cache is an excellent fit for content retrieval as a given request URL will always return the same response. Accordingly, as a decentralized IPFS resolution layer, `meson.network` leverages the Meson bandwidth marketplace to look up content previously cached in Meson CDN (based on the geolocation of the end user).
+
+We have the file-CID in the storage layer(e.g. ipfs). The CID will be mirrored to some meson nodes on the first user request. And if the requests for CID increase, the CID will be mirrored to more meson nodes. The auto-scaling mechanism will bring a high-speed and good user experience.
+
+![image](https://user-images.githubusercontent.com/46369948/212465076-c31f1502-0d16-4520-839c-3adf28b8e903.png)
+
+### What’s Next for Meson Network
+
+\***\*Meson Network\*\*** has a variety of upcoming developments and features planned, including:
+
+- IPFS Catapult: Add many privacy protection technical solutions to ensure users' net neutrality and avoid threats from internet service providers (ISPs).
+
+- Web3 DNS Gateway: Help more Web3 DNS Service links with decentralized storage.
+
+Learn more about Fleek by visiting any of the following:
+
+- Website: [https://meson.network/](https://meson.network/)
+- Twitter: [https://twitter.com/NetworkMeson](https://twitter.com/NetworkMeson)
+- Discord: [https://discord.com/invite/z6YfSHDkmS](https://discord.com/invite/z6YfSHDkmS)
+- Docs: [https://docs.meson.network/](https://docs.meson.network/)
+- Youtube: [https://www.youtube.com/c/MesonNetwork](https://www.youtube.com/c/MesonNetwork)
